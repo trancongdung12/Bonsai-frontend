@@ -1,0 +1,47 @@
+.best-sell-pro .title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF8000;
+    padding: 0px;
+}
+.best-sell-pro hr{
+    margin-top: -10px;
+    border: 1px solid #FF8000;
+}
+.product{
+    /* padding: 0px 40px; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product .item {
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    width: 200px;
+    background: white;
+}
+.product .item img{
+    width: 200px;
+    height: 200px;
+}
+.product .item .item-title{
+    font-weight: bold;
+    font-size: 15px;
+}
+.product .item .caption{
+    display: flex;
+    justify-content: space-between;
+}
+.product .item .price{
+    color: red;
+}
+.product .item .caption button{
+    margin-top: 15px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background: #FF8000;
+}
+.product .item .caption button span{
+    color: white;
+}

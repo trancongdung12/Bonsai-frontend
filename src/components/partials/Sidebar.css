@@ -1,0 +1,34 @@
+.content{
+    display: flex;
+    padding: 0px 15%;
+}
+.side-bar{
+    width: 20%;
+   
+}
+.bestsell{
+    width: 85%;
+}
+.side-bar  .category{
+    width: 200px;
+    padding: 0px;
+    border: 1px solid #ddd;
+    background: white;
+}
+.side-bar .category li{
+    list-style: none;
+    padding: 5px 15px;
+    border-bottom: 1px solid #ddd;
+
+}
+.side-bar .category li:first-child{
+    background: #3daa12;
+    font-weight: bold;
+}
+.side-bar .category li:first-child a{
+    color: white;
+}   
+.side-bar .category li a{
+    color: black;
+    text-decoration: none;
+}
