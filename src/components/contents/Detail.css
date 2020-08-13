@@ -1,0 +1,15 @@
+.detail {
+    padding: 50px 15%;
+}
+.detail .detail-item{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+}
+.detail .detail-img img{
+    border: 1px solid #ddd;
+    width: 350px;
+    height: 350px;
+    margin-right: 30px;
+}

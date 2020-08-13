@@ -32,7 +32,7 @@ class Header extends Component {
         </div>
         <div className="menu">
             <ul>
-              <li><a href="">Giới thiệu</a></li>
+              <li><a href="">Trang chủ</a></li>
               <li><a href="">Cây cảnh</a></li>
               <li><a href="">Chậu cảnh</a></li>
               <li><a href="">Phụ kiện cây cảnh</a></li>
