@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import './Header.css';
 import logo from './image/logo.png';  
+import {Link} from 'react-router-dom';
 class Header extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isLogin :false
+    }
+
+  }
+  componentDidMount(){
+    var userLogin = JSON.parse(localStorage.getItem("user"));
+    console.log(userLogin);
+    if(userLogin){
+      this.setState({isLogin:true})
+    }
+  }
   render() {
+  
     return (
       <div>
         <nav>
@@ -17,8 +33,11 @@ class Header extends Component {
                     <button>Tìm kiếm</button>
                   </div>
                 </li>
-                <li><a href="">Đăng nhập</a></li>
-                <li><a href="">Đăng ký</a></li>
+                {
+                (this.state.isLogin) ? "Dungx" :
+                <li><Link to="/login">Đăng nhập</Link></li>
+                 }
+              
                 <li><a href=""><b>Giỏ hàng (1)</b></a></li>
               </ul>
             </div>
@@ -32,7 +51,7 @@ class Header extends Component {
         </div>
         <div className="menu">
             <ul>
-              <li><a href="">Trang chủ</a></li>
+              <li><Link to="/">Trang chủ</Link></li>
               <li><a href="">Cây cảnh</a></li>
               <li><a href="">Chậu cảnh</a></li>
               <li><a href="">Phụ kiện cây cảnh</a></li>
