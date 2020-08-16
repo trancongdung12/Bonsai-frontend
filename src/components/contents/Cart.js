@@ -1,8 +1,59 @@
 import React, { Component } from 'react';
-import tree from './tree.jpg';
-import './Cart.css'
+import NumberFormat from 'react-number-format';
+import './Cart.css';
+import {Link} from 'react-router-dom';
 class Cart extends Component {
+    constructor(){
+        super();
+        var cart = JSON.parse(localStorage.getItem("carts"));
+        if(!cart){
+              cart = [];
+        }
+        var userCart = cart.filter( function (item) {
+            return item.user_id === localStorage.getItem("user");
+          });
+          
+        this.state = {
+            carts : cart,
+            usercarts : userCart
+        }
+        this.onDestroy = this.onDestroy.bind(this);
+        this.onIncre = this.onIncre.bind(this);
+        // this.onReduct = this.onReduct.bind(this);
+    }
+    onDestroy(key){
+        return (event)=>{
+            var newArr = this.state.carts;
+            newArr.splice(key, 1);
+            localStorage.setItem("carts",JSON.stringify(newArr));
+            this.setState({usercarts: newArr });  
+        }
+       }
+    onReduct(item){
+        return (event)=>{ 
+            var cart = this.state.carts;
+            var oldItem = this.state.usercarts.find((el)=>(el.id === item.id));
+            oldItem.quantity  = oldItem.quantity-1 ;
+            if(oldItem.quantity == 0){
+                alert("Số lượng > 1");
+                oldItem.quantity = 1;
+            }
+            localStorage.setItem("carts",JSON.stringify(cart));          
+            this.setState({carts: cart});
+        }
+    }
+    onIncre(item){
+        return (event)=>{
+            var cart = this.state.carts;
+            var oldItem = this.state.usercarts.find((el)=>(el.id === item.id));
+            oldItem.quantity  = oldItem.quantity+1 ;
+            this.setState({carts: cart});
+            localStorage.setItem("carts",JSON.stringify(cart));
+        }
+    }
     render() {
+        var stt = 1;
+        var total = 0;
         return (
             <div className="cart">
                 <div className="cart-item">
@@ -23,20 +74,28 @@ class Cart extends Component {
                             <th>Xóa</th>
                         </tr>
                         </thead>
-                        <tr className="cart-tr">
-                            <td>1</td>
-                            <td><img src={tree} height="50px" width="50px" /></td>
-                            <td>Cây hưởng dương</td>
-                            <td>85,000 đ/Bộ</td>
-                            <td className="td-quantity"><button>-</button><input type="text" value="1" disabled/><button>+</button></td>
-                            <td><b>85,000 đ</b></td>
-                            <td><button className="btn-delete"><span className="fa fa-trash"></span></button></td>
+                        {this.state.usercarts.map((item,key)=>(
+                            <tr className="cart-tr">
+                            <td>{stt++}</td>
+                            <td><img src={"http://127.0.0.1:8000"+item.image} height="50px" width="50px" /></td>
+                            <td>{item.name}</td>
+                            <td><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} /> đ/Bộ</td>
+                            <td className="td-quantity">
+                                <button onClick={this.onReduct(item)}>-</button>
+                                <input type="text" value={item.quantity} disabled/>
+                                <button onClick={this.onIncre(item)}>+</button></td>
+                            <td><b><NumberFormat value={item.price*item.quantity} displayType={'text'} thousandSeparator={true} /> đ</b></td>
+                            <td><button onClick={this.onDestroy(key)} className="btn-delete"><span className="fa fa-trash"></span></button></td>
+                            <input hidden value={total+=item.price*item.quantity} />
                         </tr>
+                        
+                        ))}
+                        
                     </table>
-                    <p>Tổng cộng: <b style={{color:"red"}}>85,000 đ</b></p>
+                    <p>Tổng cộng: <b style={{color:"red"}}><NumberFormat value={total} displayType={'text'} thousandSeparator={true} /> đ</b></p>
                     <hr/>
                     <div className="btn-payment">
-                        <button>Thanh toán</button>
+                        <Link to="payment"><button>Thanh toán</button></Link>
                         <button>Chọn thêm sản phẩm</button>
                     </div>
                 </div>

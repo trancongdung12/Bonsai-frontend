@@ -1,0 +1,63 @@
+
+.footer .footer-top{
+    padding: 50px 30%;
+    text-align: center;
+}
+.footer .footer-top h2{
+    color: #52403c;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+   
+.footer .footer-top .form-control{
+    display: flex;
+    padding: 20px 20%;
+}
+.footer .footer-top .form-control input{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid black;
+    width: 300px;
+    height: 30px;
+    padding: 0px 10px;
+    outline: none;
+}
+.footer .footer-top .form-control .btn-send button{
+    background: #3daa12;
+    border:1px solid #3daa12;
+    color: white;
+    height: 32px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.footer .footer-bottom{
+    background: url('./image/footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#52403c;
+}
+.footer .footer-bottom .item-bottom{
+    padding: 0px 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-bottom .title h3{
+    color: #3daa12;
+}
+.footer-bottom .category ul{
+    margin-left: -20px;
+}
+.footer-bottom .category ul li{
+    list-style: none;
+}
+.footer-bottom .category ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color:#52403c;
+}
+.footer-bottom .category ul li a span{
+    margin-right: 10px;
+}

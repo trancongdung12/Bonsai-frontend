@@ -1,10 +1,13 @@
-.best-sell-pro .title{
+.home{
+    padding: 0px 15%;
+}
+.home .title{
     font-size: 18px;
     font-weight: bold;
     color: #FF8000;
     padding: 0px;
 }
-.best-sell-pro hr{
+.home hr{
     margin-top: -10px;
     border: 1px solid #FF8000;
 }
@@ -14,31 +17,31 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.product .item {
+.product .product-item {
     margin-bottom: 5px;
     padding: 10px 10px;
     width: 200px;
     background: white;
 }
-.product .item img{
+.product .product-item img{
     width: 200px;
     height: 200px;
 }
-.product .item img:hover{
+.product .product-item img:hover{
     transform: scale(1.1);
 }
-.product .item .item-title{
+.product .product-item .product-item-title{
     font-weight: bold;
     font-size: 15px;
 }
-.product .item .caption{
+.product .product-item .caption{
     display: flex;
     justify-content: space-between;
 }
-.product .item .price{
+.product .product-item .price{
     color: red;
 }
-.product .item .caption button{
+.product .product-item .caption button{
     margin-top: 15px;
     margin-right: 5px;
     padding: 5px 10px;
@@ -47,6 +50,6 @@
     outline: none;
     cursor: pointer;
 }
-.product .item .caption button span{
+.product .product-item .caption button span{
     color: white;
 }

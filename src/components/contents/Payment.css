@@ -47,6 +47,8 @@
     border: 1px solid #F28902;
     border-radius: 2px;
     color: white;
+    outline: none;
+    cursor: pointer;
 }
 .payment .payment-content{
     padding: 20px;

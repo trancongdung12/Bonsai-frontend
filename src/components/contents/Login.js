@@ -39,8 +39,9 @@ class Login extends Component {
             alert('Đăng nhập thành công');
             localStorage.setItem('user', response.data);
             this.props.history.push('/');
+            window.location.reload();
             }else{
-                alert('Tên đăng nhập hoặc mật khẩu của bạn không đúng :(');
+                alert('Tên đăng nhập hoặc mật khẩu của bạn không đúng');
             }
                
         });
