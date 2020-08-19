@@ -4,6 +4,7 @@ import logo from './image/logo.png';
 import {Link} from 'react-router-dom';
 import ReactModal from 'react-modal';
 import NumberFormat from 'react-number-format';
+
 class Header extends Component {
   constructor(){
     super();
@@ -29,7 +30,8 @@ class Header extends Component {
         this.state = {
           isLogin :false,
           userName: "",
-          countCart:""
+          countCart:"",
+          order:[]
         }
       }
       this.onLogout = this.onLogout.bind(this);
@@ -88,8 +90,13 @@ class Header extends Component {
                 </li>
                 {
                 (this.state.isLogin) ?<ul className="item-account">
-                   <li><b>{this.state.userName}</b> <button onClick={this.onLogout}>
-                     <span className="fa fa-sign-out-alt"></span></button></li>
+                   <li><b>
+                     <Link to="profile">{this.state.userName}</Link>
+                     </b> 
+                     <button onClick={this.onLogout}>
+                     <span className="fa fa-sign-out-alt"></span>
+                     </button>
+                  </li>
                      <li><Link to="/cart"><b>Giỏ hàng <span style={{color:"red"}}>({this.state.countCart})</span></b></Link></li>
                      <li><button onClick={this.handleOpenModal}>Đơn hàng</button></li>
                      </ul>:

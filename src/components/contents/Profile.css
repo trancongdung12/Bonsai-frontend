@@ -1,0 +1,43 @@
+.profile{
+    padding: 20px 15%;
+}
+.profile-item{
+    background: white;
+    padding: 30px 30px;
+}
+.profile-item ul li{
+    padding: 5px 0px;
+    list-style: none;
+}
+.profile-item ul li button{
+    background: #FF8000;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    cursor: pointer;
+    outline: none;
+}
+.ReactModal__Content.ReactModal__Content--after-open {
+    margin-left: 30%;
+    width: 25%;
+    height: 130px;
+
+}
+.changepass .form-changepass input{
+    height: 25px;
+    width: 75%;
+    outline: none;
+    padding: 0px 10px;
+}
+.changepass .form-changepass button{
+    background: #3daa12;
+    border: 1px solid #3daa12;
+    color:white;
+    padding: 6px 5px;
+    cursor: pointer;
+    outline: none;
+}
+.changepass .btn-close{
+    margin-top: 25px;
+    margin-left: 90%;
+}

@@ -14,6 +14,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Profile from './components/contents/Profile';
 function App() {
   return (
     <Router>
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/payment">
             <Payment />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
           <Route exact path="/">
             <Home />

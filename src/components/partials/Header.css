@@ -90,6 +90,8 @@ nav{
     border-bottom-left-radius: 5px;
 }
 .search-box button{
+    cursor: pointer;
+    outline: none;
     background: turquoise;
     border:1px solid turquoise;
     border-top-right-radius: 5px;
